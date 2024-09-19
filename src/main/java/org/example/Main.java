@@ -1,17 +1,33 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int n = 500;
+        List<String> result = sequence(n);
+        System.out.println(result);
+    }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public static List<String> sequence(int n) {
+        if (n <= 0)
+            return null;
+
+        List<String> sequence = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 5 == 0) {
+                if (i % 7 == 0)
+                    sequence.add("fizzbuzz");
+                else
+                    sequence.add("fizz");
+            } else if (i % 7 == 0) {
+                sequence.add("buzz");
+            } else
+                sequence.add(String.valueOf(i));
         }
+
+        return sequence;
     }
 }
