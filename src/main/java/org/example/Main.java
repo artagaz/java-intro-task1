@@ -6,13 +6,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         int n = 500;
-        List<String> result = sequence(n);
+        List<String> result = FizzBuzz(n);
         System.out.println(result);
     }
 
-    public static List<String> sequence(int n) {
-        if (n <= 0)
-            return null;
+    public static List<String> FizzBuzz(int n) {
 
         List<String> sequence = new ArrayList<>();
 
